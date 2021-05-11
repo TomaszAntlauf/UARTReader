@@ -15,28 +15,35 @@ namespace UARTReader
         const uint KEYEVENTF_KEYUP = 0x0002;
         static void Main(string[] args)
         {
-            string name;
+            
             StringComparer stringComparer = StringComparer.OrdinalIgnoreCase;
             Thread readThread = new Thread(Read);
 
             _serialPort = new SerialPort();
 
-            _serialPort.PortName = SetPortName(_serialPort.PortName);
-            _serialPort.BaudRate = 9600;
-            _serialPort.Parity = (Parity)Enum.Parse(typeof(Parity), "None", true);
-            _serialPort.DataBits = 8;
-            _serialPort.StopBits = (StopBits)Enum.Parse(typeof(StopBits),"One",true);
-            _serialPort.Handshake = (Handshake)Enum.Parse(typeof(Handshake), "None", true);
+            bool exit = true;
+            while (exit)
+            {
+                try
+                {
 
-            _serialPort.ReadTimeout = 200;
-            _serialPort.WriteTimeout = 50;
+                    _serialPort.PortName = SetPortName(_serialPort.PortName);
+                    _serialPort.BaudRate = 9600;
+                    _serialPort.Parity = (Parity)Enum.Parse(typeof(Parity), "None", true);
+                    _serialPort.DataBits = 8;
+                    _serialPort.StopBits = (StopBits)Enum.Parse(typeof(StopBits), "One", true);
+                    _serialPort.Handshake = (Handshake)Enum.Parse(typeof(Handshake), "None", true);
 
-            _serialPort.Open();
+                    _serialPort.ReadTimeout = 100000;
+                    _serialPort.WriteTimeout = 50;
+
+                    _serialPort.Open();
+                }
+                catch (Exception ex) { }
+            }
+            
             _continue = true;
             readThread.Start();
-
-            Console.Write("Name: ");
-            name = Console.ReadLine();
 
         }
 
@@ -47,6 +54,8 @@ namespace UARTReader
                 try
                 {
                     string message = _serialPort.ReadLine();
+                    if (!String.IsNullOrEmpty(message))
+                        Console.WriteLine(message);
 
                     //up
                     if (message.Contains("d1"))
