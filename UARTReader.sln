@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UARTReader", "UARTReader\UARTReader.csproj", "{FE7CD9AE-9DB4-4B16-B505-5F4196891A9D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE7CD9AE-9DB4-4B16-B505-5F4196891A9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE7CD9AE-9DB4-4B16-B505-5F4196891A9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE7CD9AE-9DB4-4B16-B505-5F4196891A9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE7CD9AE-9DB4-4B16-B505-5F4196891A9D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FEA2681A-0F53-45B0-882D-143FD444C83F}
+	EndGlobalSection
+EndGlobal
