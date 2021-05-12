@@ -15,8 +15,6 @@ namespace UARTReader
         const uint KEYEVENTF_KEYUP = 0x0002;
         static void Main(string[] args)
         {
-            
-            StringComparer stringComparer = StringComparer.OrdinalIgnoreCase;
             Thread readThread = new Thread(Read);
 
             _serialPort = new SerialPort();
