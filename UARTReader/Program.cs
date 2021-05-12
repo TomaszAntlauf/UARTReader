@@ -38,6 +38,7 @@ namespace UARTReader
                     _serialPort.WriteTimeout = 50;
 
                     _serialPort.Open();
+                    exit = false;
                 }
                 catch (Exception ex) { }
             }
