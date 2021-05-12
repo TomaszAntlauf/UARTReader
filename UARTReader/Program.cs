@@ -156,8 +156,8 @@ namespace UARTReader
                         keybd_event((byte)0x4C, 0, KEYEVENTF_KEYUP | 0, 0);
                     }
 
+                    
 
-                    Console.WriteLine(message);
                 }
                 catch (TimeoutException) { }
             }
