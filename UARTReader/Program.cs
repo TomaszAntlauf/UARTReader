@@ -56,8 +56,18 @@ namespace UARTReader
                     if (!String.IsNullOrEmpty(message))
                         Console.WriteLine(message);
 
+                    //action 6
+                    if (message.Contains("d10"))
+                    {
+                        keybd_event((byte)0x4C, 0, 0, 0);
+                    }
+                    else if (message.Contains("u10"))
+                    {
+                        keybd_event((byte)0x4C, 0, KEYEVENTF_KEYUP | 0, 0);
+                    }
+
                     //up
-                    if (message.Contains("d1"))
+                    else if (message.Contains("d1"))
                     {
                         keybd_event((byte)0x57, 0, 0, 0);
                     }
@@ -144,16 +154,6 @@ namespace UARTReader
                     else if (message.Contains("u9"))
                     {
                         keybd_event((byte)0x4B, 0, KEYEVENTF_KEYUP | 0, 0);
-                    }
-
-                    //action 6
-                    else if (message.Contains("d10"))
-                    {
-                        keybd_event((byte)0x4C, 0, 0, 0);
-                    }
-                    else if (message.Contains("u10"))
-                    {
-                        keybd_event((byte)0x4C, 0, KEYEVENTF_KEYUP | 0, 0);
                     }
 
                     
